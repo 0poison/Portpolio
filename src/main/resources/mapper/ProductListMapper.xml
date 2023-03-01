@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.co.ezenac.mapper.ProductListMapper">
+
+	<insert id="addProduct">
+		INSERT INTO
+		PRODUCT_BOX(PRODUCT_TYPE,PRODUCT_NAME,PRODUCT_QUANTITY,PRODUCT_PRICE,PRODUCT_TEXT,PRODUCT_IMAGE,PRODUCT_DETAIL)
+		VALUES
+		(#{productType},#{productName},#{productQuantity},#{productPrice},#{productText},#{productImage},#{productDetail})
+	</insert>
+
+	<select id="getProductList"
+		resultType="kr.co.ezenac.beans.ProductInfoBean">
+		SELECT PRODUCT_IDX,
+		PRODUCT_TYPE,
+		PRODUCT_NAME,PRODUCT_PRICE,PRODUCT_TEXT,PRODUCT_IMAGE,PRODUCT_DETAIL
+		FROM PRODUCT_BOX
+		WHERE PRODUCT_TYPE = #{productType} ORDER BY PRODUCT_IDX
+	</select>
+
+	<select id="getProductInfo"
+		resultType="kr.co.ezenac.beans.ProductInfoBean">
+		SELECT PRODUCT_IDX, PRODUCT_TYPE,
+		PRODUCT_NAME,PRODUCT_PRICE,PRODUCT_TEXT,PRODUCT_IMAGE,PRODUCT_DETAIL
+		FROM PRODUCT_BOX
+		WHERE PRODUCT_IDX = #{productIdx}
+	</select>
+<!-- 
+	<select id="getProductInfo"
+		resultType="kr.co.ezenac.beans.ProductInfoBean">
+		SELECT PRODUCT_IDX, PRODUCT_TYPE,
+		PRODUCT_NAME,PRODUCT_PRICE,PRODUCT_TEXT,PRODUCT_IMAGE,PRODUCT_DETAIL
+		FROM PRODUCT_BOX
+		WHERE PRODUCT_TYPE = #{productType} AND
+	 = #{productProperty} AND PRODUCT_IDX = #{productIdx}
+	</select>
+ -->
+	<update id="modifyProductInfo"
+		parameterType="kr.co.ezenac.beans.ProductInfoBean">
+		UPDATE PRODUCT_BOX SET PRODUCT_NAME=#{productName}, PRODUCT_PRICE=#{productPrice},
+		PRODUCT_TEXT=#{productText} WHERE PRODUCT_IDX = #{productIdx}
+	</update>
+
+	<delete id="deleteProduct">
+		DELETE FROM PRODUCT_BOX WHERE PRODUCT_IDX =
+		#{productIdx}
+	</delete>
+
+	<select id="getAllProducts"
+		resultType="kr.co.ezenac.beans.ProductInfoBean"
+		parameterType="org.apache.ibatis.session.RowBounds">
+		SELECT PRODUCT_IDX, PRODUCT_TYPE,
+		PRODUCT_NAME,PRODUCT_PRICE,PRODUCT_TEXT,PRODUCT_IMAGE,PRODUCT_DETAIL,
+		PRODUCT_QUANTITY FROM PRODUCT_BOX
+		ORDER BY PRODUCT_IDX DESC
+	</select>
+
+	<select id="getProductCnt" resultType="int">
+		SELECT count(*) FROM
+		PRODUCT_BOX
+	</select>
+
+	<insert id="insertProduct" parameterType="Map">
+		INSERT INTO
+		PRODUCT_BOX(PRODUCT_TYPE,
+		PRODUCT_NAME,PRODUCT_PRICE,PRODUCT_TEXT,PRODUCT_IMAGE,PRODUCT_DETAIL,PRODUCT_QUANTITY)
+		VALUES
+		(#{productType},#{productName},#{productPrice},#{productText},#{productImage},#{productDetail},
+		#{productQuantity})
+	</insert>
+
+	<update id="updateProduct" parameterType="Map">
+		update
+		PRODUCT_BOX
+		set
+		PRODUCT_TYPE = #{productType},
+		PRODUCT_NAME = #{productName},
+		PRODUCT_PRICE = #{productPrice},
+		PRODUCT_TEXT = #{productText},
+		PRODUCT_IMAGE = #{productImage},
+		PRODUCT_DETAIL = #{productDetail},
+		PRODUCT_QUANTITY =
+		#{productQuantity}
+		where
+		PRODUCT_IDX = #{productIdx}
+	</update>
+
+	<delete id="deleteProductByIdx" parameterType="int">
+		DELETE FROM
+		PRODUCT_BOX WHERE PRODUCT_IDX = #{idx}
+	</delete>
+
+	<select id="searchProduct"
+		resultType="kr.co.ezenac.beans.ProductInfoBean"
+		parameterType="kr.co.ezenac.beans.ProductInfoBean">
+		SELECT PRODUCT_IDX, PRODUCT_TYPE,
+		PRODUCT_NAME,
+		PRODUCT_IMAGE FROM PRODUCT_BOX WHERE
+		PRODUCT_IDX=#{productIdx} AND
+		PRODUCT_NAME LIKE %#{productName}% </select>
+
+	<select id="getProductDetailsByIdx"
+		resultType="kr.co.ezenac.beans.ProductInfoBean" parameterType="int">
+		SELECT
+		PRODUCT_IDX, PRODUCT_TYPE,
+		PRODUCT_NAME,PRODUCT_PRICE,PRODUCT_TEXT,PRODUCT_IMAGE,PRODUCT_DETAIL,
+		PRODUCT_QUANTITY FROM PRODUCT_BOX
+		WHERE PRODUCT_IDX = #{productIdx}
+	</select>
+
+</mapper>

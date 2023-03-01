@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.co.ezenac.mapper.AdminMapper">
+
+	<select id="getLoginAdminInfo"
+		parameterType="kr.co.ezenac.beans.AdminBean"
+		resultType="kr.co.ezenac.beans.AdminBean">
+		SELECT ADMIN_NAME FROM ADMIN_TABLE WHERE
+		ADMIN_ID=#{adminId} AND
+		ADMIN_PW=#{adminPw}
+	</select>
+
+	<select id="getTopMenuList"
+		resultType="kr.co.ezenac.beans.BoardInfoBean">
+		SELECT BOARD_INFO_IDX,
+		BOARD_INFO_NAME, BOARD_INFO_ID
+		FROM
+		BOARD_INFO_TABLE ORDER BY
+		BOARD_INFO_IDX
+	</select>
+
+	<select id="getProductList"
+		resultType="kr.co.ezenac.beans.ProductInfoBean">
+		SELECT * FROM PRODUCT_LIST WHERE
+		PRODUCT_TYPE=#{productType}
+	</select>
+
+	<select id="getUserList"
+		resultType="kr.co.ezenac.beans.UserBean">
+		SELECT USER_IDX, USER_NAME, USER_ID, USER_REGDATE
+		FROM
+		USER_TABLE
+	</select>
+
+	<select id="getAllUserInfo"
+		resultType="kr.co.ezenac.beans.UserBean" parameterType="int">
+		SELECT
+		USER_NAME,USER_ID,USER_PHONE,
+		USER_ADDRESS1,USER_ADDRESS2,
+		USER_ADDRESS3, USER_REGDATE FROM
+		USER_TABLE WHERE USER_IDX=#{userIdx}
+	</select>
+
+	<select id="getUsers" resultType="kr.co.ezenac.beans.UserBean"
+		parameterType="org.apache.ibatis.session.RowBounds">
+		SELECT * FROM USER_TABLE ORDER
+		BY USER_REGDATE DESC
+	</select>
+	<select id="getContentInfo"
+		resultType="kr.co.ezenac.beans.ContentBean" parameterType="int">
+		SELECT
+		A2.USER_NAME AS CONTENT_WRITER_NAME,
+		DATE_FORMAT(A1.CONTENT_DATE,
+		'YYYY-MM-DD') AS CONTENT_DATE,
+		A1.CONTENT_SUBJECT, A1.CONTENT_TEXT,
+		A1.CONTENT_FILE,
+		A1.CONTENT_WRITER_IDX FROM CONTENT_TABLE A1,
+		USER_TABLE A2 WHERE
+		A1.CONTENT_WRITER_IDX = A2.USER_IDX AND CONTENT_IDX
+		=#{contentIdx})
+	</select>
+
+</mapper>

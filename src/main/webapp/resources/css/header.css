@@ -1,0 +1,111 @@
+.flex-container {
+	font-family: Nanum Gothic;
+	font-weight: bolder;
+	display: flex;
+	padding: 5px;
+	margin: 5px;
+}
+
+.flex-container.flex-start {
+	justify-content: flex-start;
+}
+
+.flex-container.flex-end {
+	justify-content: flex-end;
+}
+
+.flex-container.center {
+	justify-content: center;
+}
+
+.flex-container.space-around {
+	justify-content: space-around;
+}
+
+.flex-container.space-between {
+	justify-content: space-between;
+}
+
+.flex-container.space-evenly {
+	justify-content: space-evenly;
+}
+
+.flex-item {
+	font-family: 'MICEGothic Bold';
+	font-size: 12px;
+	font-weight: bolder;
+	text-align: center;
+}
+
+.flex-logo {
+	font-family: 'Noto Sans KR', sans-serif;
+	text-align: center;
+	font-size: 70px;
+	color: rgb(19, 93, 186);
+}
+
+#logo {
+	color: rgb(19, 93, 186);
+}
+
+.logo {
+	font-family: 'Noto Sans KR', sans-serif;
+	text-align: center;
+	font-size: 70px;
+	color: rgb(19, 93, 186);
+}
+
+.color-red {
+	background-color: darksalmon;
+}
+
+.color-blue {
+	background-color: dodgerblue;
+}
+
+.color-green {
+	background-color: forestgreen;
+}
+
+.color-yellow {
+	background-color: gold;
+}
+
+.color-pupple {
+	background-color: rebeccapurple;
+}
+
+.color-orange {
+	background-color: orange;
+}
+
+.search {
+	margin-bottom: 20px;
+}
+
+input {
+	font-family: 'MICEGothic Bold';
+	border: 1px solid #bbb;
+	border-radius: 8px;
+	padding: 10px 12px;
+	font-size: 14px;
+}
+
+.search_input {
+	width: 550px;
+	margin: 0px;
+}
+
+#carouselExampleFade {
+	margin-bottom: 50px;
+}
+
+.menu1 {
+	font-family: 'MICEGothic Bold';
+	font-weight: bolder;
+	background-color: darksalmon;
+}
+
+.li {
+	font-family: 'MICEGothic Bold';
+}

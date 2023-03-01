@@ -1,0 +1,101 @@
+create sequence cpu_no;
+
+create table usertbl(
+    userid varchar2(30) not NULL PRIMARY KEY, -- 아이디 --
+    userpw varchar2(30) NOT NULL, -- 패스워드 --
+    username varchar2(20) not null, -- 이름 --
+    userphone varchar2(20) not null, -- 휴대폰번호 --
+    usermail VARCHAR2(100) not null, -- 이메일 --
+    useraddress1 VARCHAR2(100) not null, -- 주소 --
+    useraddress2 VARCHAR2(100) not null -- 상세주소 --
+    );
+    
+create table cpu_box(
+    cpu_no NUMBER(38) not null PRIMARY KEY, -- 인덱스 --
+    cpuname VARCHAR2(80) not null, -- 이름 --
+    cpuprice number(10) not null, -- 가격 --
+    cputext varchar2(400),
+    cpuimage VARCHAR2(100) not null, -- 썸네일 이미지 --
+    cpudetail VARCHAR2(100) not null -- 상세 이미지 --  
+    );
+
+create table mainboard_box(
+    mb_no NUMBER(38) not null PRIMARY KEY, -- 인덱스 --
+    mbname VARCHAR2(80) not null, -- 이름 --
+    mbprice number(10) not null, -- 가격 --
+    mbtext varchar2(500),
+    mbimage VARCHAR2(100) not null, -- 썸네일 이미지 --
+    mbdetail VARCHAR2(100) not null -- 상세 이미지 --  
+    );
+ 
+create table ram_box(
+    ram_no NUMBER(38) not null PRIMARY KEY, -- 인덱스 --
+    ramname VARCHAR2(80) not null, -- 이름 --
+    ramprice number(10) not null, -- 가격 --
+    ramtext varchar2(400),
+    ramimage VARCHAR2(100) not null, -- 썸네일 이미지 --
+    ramdetail VARCHAR2(100) not null -- 상세 이미지 --  
+    );
+    
+create table vga_box(
+    vga_no NUMBER(38) not null PRIMARY KEY, -- 인덱스 --
+    vganame VARCHAR2(80) not null, -- 이름 --
+    vgaprice number(10) not null, -- 가격 --
+    vgatext varchar2(400),
+    vgaimage VARCHAR2(100) not null, -- 썸네일 이미지 --
+    vgadetail VARCHAR2(100) not null -- 상세 이미지 --  
+    );
+    
+create table ssd_box( 
+    ssd_no NUMBER(38) not null PRIMARY KEY, -- 인덱스 --
+    ssdname VARCHAR2(80) not null, -- 이름 --
+    ssdprice number(10) not null, -- 가격 --
+    ssdtext varchar2(400),
+    ssdimage VARCHAR2(100) not null, -- 썸네일 이미지 --
+    ssddetail VARCHAR2(100) not null -- 상세 이미지 --  
+    );
+    
+create table hdd_box(
+    hdd_no NUMBER(38) not null PRIMARY KEY, -- 인덱스 --
+    hddname VARCHAR2(150) not null, -- 이름 --
+    hddprice number(10) not null, -- 가격 --
+    hddtext varchar2(400),
+    hddimage VARCHAR2(100) not null, -- 썸네일 이미지 --
+    hdddetail VARCHAR2(100) not null -- 상세 이미지 --  
+    );    
+
+create table power_box(
+    power_no NUMBER(38) not null PRIMARY KEY, -- 인덱스 --
+    powername VARCHAR2(100) not null, -- 이름 --
+    powerprice number(10) not null, -- 가격 --
+    powertext varchar2(400),
+    powerimage VARCHAR2(100) not null, -- 썸네일 이미지 --
+    powerdetail VARCHAR2(100) not null -- 상세 이미지 --  
+    );
+    
+create table case_box(
+    case_no NUMBER(38) not null PRIMARY KEY, -- 인덱스 --
+    casename VARCHAR2(80) not null, -- 이름 --
+    caseprice number(10) not null, -- 가격 --
+    casetext varchar2(400),
+    caseimage VARCHAR2(100) not null, -- 썸네일 이미지 --
+    casedetail VARCHAR2(100) not null -- 상세 이미지 --  
+    );
+
+
+create table monitor_box(
+    monitor_no NUMBER(38) not null PRIMARY KEY, -- 인덱스 —
+    monitorname VARCHAR2(80) not null, -- 이름 —
+    monitorprice number(10) not null, -- 가격 —
+    monitorimage VARCHAR2(100) not null, -- 썸네일 이미지 —
+    monitordetail VARCHAR2(100) not null -- 상세 이미지 —  
+    );
+    
+create table cooler_box(
+    cooler_no NUMBER(38) not null PRIMARY KEY, -- 인덱스 —
+    coolername VARCHAR2(80) not null, -- 이름 —
+    coolerprice number(10) not null, -- 가격 —
+    coolertext varchar2(400),
+    coolerimage VARCHAR2(100) not null, -- 썸네일 이미지 —
+    coolerdetail VARCHAR2(100) not null -- 상세 이미지 —  
+    );

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.co.ezenac.mapper.CartMapper">
+
+	<!-- 카트 추가 -->
+	<insert id="addCart" parameterType="kr.co.ezenac.beans.CartBean">
+		INSERT INTO CART_TABLE (CART_USER_ID, CART_PRODUCT_NAME, CART_COUNT)
+		VALUES(#{userId}, #{productName}, #{cartCount})
+	</insert>
+	
+	<!-- 카트 목록 -->
+	<select id="getCart" resultType="String">
+		SELECT C.CART_ID, C.CART_USER_ID, P.CART_PRODUCT_IMAGE, C.CART_PRODUCT_NAME, P.CART_PRODUCT_PRICE, C.CART_COUNT
+		FROM CART_TABLE C LEFT OUTER JOIN
+		PRODUCT_BOX P ON C.CART_PRODUCT_NAME = P.CART_PRODUCT_NAME
+		WHERE CART_USER_ID = #{userId}
+	</select>
+
+	<!-- 카트 확인 -->
+	<select id="checkCart" resultType="kr.co.ezenac.beans.CartBean">
+		SELECT * FROM CART_TABLE
+		WHERE
+		CART_USER_ID = #{userId}
+		AND CART_PRODUCT_NAME = #{productName}
+	</select>
+	
+	<!-- 카트 수량 수정 -->
+	<update id="modifyCount">
+		UPDATE CART_TABLE SET CART_COUNT = #{cartCount}
+		WHERE CART_ID = #{cartId}
+	</update>
+	
+	<!-- 카트 삭제 -->
+	<delete id="deleteCart">
+		DELETE FROM CART_TABLE WHERE CART_ID = {#cartId}
+	</delete>
+
+</mapper>

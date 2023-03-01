@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.co.ezenac.mapper.SupportMapper">
+
+	<select id="getSupportAll"
+		resultType="kr.co.ezenac.beans.SupportBean">
+		SELECT SUPPORT_NUM, SUPPORT_TITLE, SUPPORT_THEME,
+		SUPPORT_CONTENT, SUPPORT_USER_ID, SUPPORT_DATA, SUPPORT_COMMENT FROM
+		SUPPORT_TABLE
+	</select>
+
+	<select id="getSupport" parameterType="int"
+		resultType="kr.co.ezenac.beans.SupportBean">
+		SELECT
+		SUPPORT_NUM, SUPPORT_TITLE, SUPPORT_THEME,
+		SUPPORT_CONTENT, SUPPORT_USER_ID, SUPPORT_DATA, SUPPORT_COMMENT
+		FROM
+		SUPPORT_TABLE WHERE SUPPORT_NUM = #{supportNum}
+	</select>
+
+	<update id="editSupport"
+		parameterType="kr.co.ezenac.beans.SupportBean">
+		UPDATE SUPPORT_TABLE
+		SET SUPPORT_COMMENT =
+		#{supportComment} WHERE
+		SUPPORT_NUM =
+		#{supportNum}
+	</update>
+
+	<select id="searchSupport"
+		parameterType="kr.co.ezenac.beans.SupportBean"
+		resultType="kr.co.ezenac.beans.SupportBean">
+		SELECT SUPPORT_NUM, SUPPORT_TITLE, SUPPORT_THEME,
+		SUPPORT_CONTENT, SUPPORT_USER_ID, SUPPORT_DATA, SUPPORT_COMMENT FROM
+		SUPPORT_TABLE WHERE
+		SUPPORT_CONTENT LIKE '%${supportContent}%'
+	</select>
+
+	<insert id="writeSupport"
+		parameterType="kr.co.ezenac.beans.SupportBean">
+		INSERT INTO SUPPORT_TABLE(SUPPORT_NUM, SUPPORT_TITLE,
+		SUPPORT_THEME,
+		SUPPORT_CONTENT, SUPPORT_USER_ID)
+		VALUES
+		(#{supportNum},
+		#{supportTitle},
+		#{supportTheme},
+		#{supportContent}, #{supportUserId})
+	</insert>
+</mapper>

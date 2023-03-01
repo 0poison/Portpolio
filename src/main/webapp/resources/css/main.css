@@ -1,0 +1,304 @@
+@font-face {
+    font-family: 'MICEGothic Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+a {
+    text-decoration-line: none;
+    /*   text-decoration-line: underline; */
+    /*   text-decoration-line: overline; */
+    /*   text-decoration-line: line-through; */
+    /*   text-decoration-line: underline line-through overline; */
+}
+
+a:link {
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    color: black;
+}
+
+a:active {
+    color: black;
+}
+
+#slide_image {
+    height: 600px;
+}
+
+.cover {
+    display: flex;
+    justify-content: space-between;
+}
+
+.display_flex {
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+}
+
+.product_banner_out {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.product_banner {
+    line-height: 200px;
+}
+
+.col {
+
+}
+
+.banner {
+    font-family: 'MICEGothic Bold';
+    height: 200px;
+    width: 600px;
+}
+
+.MICEGothic {
+    font-family: 'MICEGothic Bold';
+}
+
+.carousel {
+    margin-bottom: 100px;
+}
+
+.card-text {
+    font-family: 'MICEGothic Bold';
+    font-size: 13px;
+}
+
+.card-title {
+    font-family: 'MICEGothic Bold';
+}
+
+.product_title {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.product_tag {
+    font-family: 'MICEGothic Bold';
+    font-weight: lighter;
+    font-size: 18px;
+    color: #A6A6A6;
+}
+
+.testDiv1 {
+    background-color: #A9A9F5;
+    border: 1px solid #666666;
+}
+
+.testDiv2 {
+    font-family: 'MICEGothic Bold';
+    border: 1px solid #E7E7E7;
+    border-radius: 6px;
+}
+
+.card_banner_1 {
+    margin: 0px 0px 30px 0px;
+}
+
+div.order div {
+    font-family: 'MICEGothic Bold';
+    margin: 15px;
+}
+
+.test1 {
+    width: 100%;
+    background-color: #A9A9F5;
+}
+
+.test2 {
+    width: 50%;
+    height: 600px;
+    padding: 20px;
+}
+
+.test3 {
+    font-family: 'MICEGothic Bold';
+    font-size: 18px;
+    width: 50%;
+    height: 600px;
+    padding: 20px;
+}
+
+test3.class div {
+    margin: 30px;
+}
+
+div.class div {
+    margin: 30px;
+}
+
+#product_info_img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+#card_image {
+    width: 410px;
+    height: 350px;
+    object-fit: cover;
+}
+
+#card_image_w {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+#410x350 {
+    width: 410px;
+    height: 350px;
+    object-fit: cover;
+}
+
+.product_detail_out {
+    width: 100%;
+    text-align: center;
+}
+
+.product_detail_image {
+    margin-bottom: 250px;
+}
+
+.product_detail_table {
+    margin-bottom: 250px;
+}
+
+.product_detail_review {
+    margin-bottom: 250px;
+}
+
+#product_list_img {
+    margin-bottom: 10px;
+}
+
+#cart_img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.table td, .table th {
+    vertical-align: middle;
+}
+
+#price {
+    text-align: left;
+}
+
+#support_search {
+    width: 300px;
+}
+
+#side_nav_menu {
+    font-family: 'MICEGothic Bold';
+    font-weight: 100;
+}
+
+.carouselDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #EEFFEA, #F6F5E5, #FEEBDF);
+    margin-bottom: 100px;
+}
+
+.menu_title {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 100;
+    font-size: 35px;
+    margin-bottom: 5px;
+}
+
+.menu_sub {
+    font-family: 'MICEGothic Bold';
+    font-size: 15px;
+    font-weight: bold;
+    color: #A6A6A6;
+    margin-bottom: 15px;
+}
+
+.menu_sub_black {
+    font-family: 'MICEGothic Bold';
+    font-size: 15px;
+    font-weight: bolder;
+    margin-bottom: 15px;
+}
+
+.footer_user {
+    font-family: Malgun Gothic;
+    font-size: 12px;
+    color: #888888;
+}
+
+.floating {
+    border: 1px solid #888888;
+    border-radius: 8px;
+    position: fixed;
+    right: 47%;
+    top: 410px;
+    margin-right: -720px;
+    text-align: center;
+    width: 120px;
+}
+
+.floating_in {
+    font-family: Malgun Gothic;
+    font-size: 13px;
+    color: #888888;
+    align-items: center;
+}
+
+.info_table {
+    margin: 20px;
+}
+
+.table td.info_table, .table th.info_table {
+    font-family: 'MICEGothic Bold';
+    font-size: 15px;
+    padding: 15px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.main_bgimg_edit {
+    background-image: url("../image/witcher_edit.jpg");
+    background-size: cover;
+    height: 1700px;
+}
+
+div.row div.col {
+    width: 300px;
+}
+
+.bg-light {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.26%;
+    overflow: hidden;
+}
+
+.bg-light {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
